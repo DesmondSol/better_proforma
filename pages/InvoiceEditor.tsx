@@ -219,13 +219,30 @@ const InvoiceEditor: React.FC<InvoiceEditorProps> = ({ profile, clients, catalog
             displayItems.push(item);
         });
 
-        // Adjusting items per page for the new spacious modern layout
-        const ITEMS_PER_PAGE = 6;
         const pages: InvoiceItem[][] = [];
-        if (displayItems.length === 0) pages.push([]);
-        else {
-            for (let i = 0; i < displayItems.length; i += ITEMS_PER_PAGE) {
-                pages.push(displayItems.slice(i, i + ITEMS_PER_PAGE));
+        if (displayItems.length === 0) {
+            pages.push([]);
+        } else {
+            const MAX_REGULAR = 6;
+            const MAX_LAST = 3;
+            
+            let i = 0;
+            while (i < displayItems.length) {
+                const remaining = displayItems.length - i;
+                
+                if (remaining <= MAX_LAST) {
+                    pages.push(displayItems.slice(i));
+                    break;
+                } else if (remaining <= MAX_REGULAR) {
+                    // We avoid the final page having too many items by splitting
+                    // if the remainder is between MAX_LAST and MAX_REGULAR
+                    const take = remaining - MAX_LAST;
+                    pages.push(displayItems.slice(i, i + take));
+                    i += take;
+                } else {
+                    pages.push(displayItems.slice(i, i + MAX_REGULAR));
+                    i += MAX_REGULAR;
+                }
             }
         }
 

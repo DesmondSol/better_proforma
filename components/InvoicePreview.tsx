@@ -144,7 +144,7 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({
             )}
 
             <div className={`relative z-10 p-10 h-full flex flex-col ${isPdfMode ? 'justify-start' : ''}`}>
-                <header className={`flex justify-between items-center pb-8 border-b-2 ${S.borderStyle} mb-8 ${templateId === 'bold' ? 'bg-slate-900 p-10 -m-10 mb-10 text-white' : ''} ${templateId === 'custom' && (profile.customHeaderURL || profile.customBackgroundURL) ? 'border-transparent' : ''}`}>
+                <header className={`flex justify-between items-center pb-4 border-b-2 ${S.borderStyle} mb-6 ${templateId === 'bold' ? 'bg-slate-900 p-10 -m-10 mb-10 text-white' : ''} ${templateId === 'custom' && (profile.customHeaderURL || profile.customBackgroundURL) ? 'border-transparent' : ''}`}>
                     <div className="flex items-center space-x-6">
                         {profile.logoURL && templateId !== 'custom' && <img src={profile.logoURL} alt="Logo" className={`h-16 w-auto ${templateId === 'bold' ? 'filter brightness-0 invert' : ''}`} />}
                         {templateId === 'custom' && !profile.customHeaderURL && profile.logoURL && <img src={profile.logoURL} alt="Logo" className="h-16 w-auto" />}
@@ -160,7 +160,7 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({
                         </div>
                 </header>
                 
-                <div className="grid grid-cols-2 gap-12 mb-10">
+                <div className="grid grid-cols-2 gap-8 mb-6">
                     <div className="space-y-4">
                         <div className={`${S.accentBg || 'bg-slate-50'} p-6 rounded-2xl border ${S.borderStyle}`}>
                             <h3 className={`font-black ${S.accentText} uppercase text-xs mb-3 tracking-widest`}>{t.billTo}</h3>
@@ -208,13 +208,13 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({
                                 const price = parseFloat(item.unitPrice as any) || 0;
                                 return (
                                     <tr key={index} className="group transition-colors">
-                                        <td className="py-6 px-4 align-top">
+                                        <td className="py-4 px-4 align-top">
                                             <p className="font-bold text-slate-900 text-base">{item.name}</p>
                                             <p className="text-sm text-slate-500 mt-1 whitespace-pre-line leading-relaxed">{item.description}</p>
                                         </td>
-                                        <td className="py-6 px-4 text-center align-top text-slate-700 font-medium">{qty}</td>
-                                        <td className="py-6 px-4 text-right align-top text-slate-700 font-medium">{formatNumber(price)}</td>
-                                        <td className="py-6 px-4 text-right align-top font-bold text-slate-900">{formatNumber(qty * price)}</td>
+                                        <td className="py-4 px-4 text-center align-top text-slate-700 font-medium">{qty}</td>
+                                        <td className="py-4 px-4 text-right align-top text-slate-700 font-medium">{formatNumber(price)}</td>
+                                        <td className="py-4 px-4 text-right align-top font-bold text-slate-900">{formatNumber(qty * price)}</td>
                                     </tr>
                                 );
                             })}
@@ -228,7 +228,7 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({
                 </div>
 
                 {isLastPage && (
-                    <div className={`pt-10 bg-white ${isPdfMode ? 'absolute bottom-12 left-10 right-10' : 'mt-12'}`}>
+                    <div className={`pt-10 bg-white mt-auto`}>
                         <div className="grid grid-cols-2 gap-12 items-end mb-8">
                             <div className="space-y-6">
                                 {selectedBank && (
@@ -276,7 +276,7 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({
                             </div>
                         </div>
                         
-                        <div className="flex justify-between items-center pt-8 border-t-2 border-slate-100">
+                        <div className="flex justify-between items-center pt-4 border-t-2 border-slate-100">
                             <p className="text-xs text-slate-400 font-medium tracking-wide">Thank you for your business</p>
                             <div className="text-center min-w-[240px] relative">
                                 <div className="h-20 flex items-center justify-center mb-2 relative">
