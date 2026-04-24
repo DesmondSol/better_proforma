@@ -1,0 +1,5 @@
+{
+  "name": "Remix: Proforma with ocr - Invoice Generator",
+  "description": "An invoice-generation and quotation-management application that provides users with customizable templates, automated data filling, tax/VAT handling, and printable/shareable outputs.",
+  "requestFramePermissions": []
+}

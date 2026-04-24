@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.proforma.et/sitemap.xml

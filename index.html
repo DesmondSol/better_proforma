@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Proforma" />
+    <link rel="apple-touch-icon" href="/vite.svg" />
+    
+    <!--google console verification-->
+    <meta name="google-site-verification" content="1-bI6BfiAK5xrVknxir84M_F_IRUsQxISgoxLxJkPJc" />
+
+    <!-- Primary Meta Tags -->
+    <title>Proforma - Free Invoice Generator for Ethiopia | VAT & TIN Ready</title>
+    <meta name="title" content="Proforma - Free Invoice Generator for Ethiopia | VAT & TIN Ready">
+    <meta name="description" content="Create professional invoices, proformas, and quotations for Ethiopian businesses. Features automated VAT (15%) calculations, TIN management, and digital stamps. Free forever tier available.">
+    <meta name="keywords" content="Invoice Generator Ethiopia, Proforma Invoice Ethiopia, VAT Calculator Ethiopia, TIN Number Invoice, Free Invoice Template, Ethiopian Business Software, Digital Invoice Addis Ababa">
+    <meta name="author" content="Proforma.et">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.proforma.et/">
+    <meta property="og:title" content="Proforma - Free Invoice Generator for Ethiopia">
+    <meta property="og:description" content="The simplest way to create VAT-compliant invoices and quotations in Ethiopia. Download PDF or share via Telegram instantly.">
+    <meta property="og:image" content="https://www.proforma.et/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.proforma.et/">
+    <meta property="twitter:title" content="Proforma - Free Invoice Generator for Ethiopia">
+    <meta property="twitter:description" content="The simplest way to create VAT-compliant invoices and quotations in Ethiopia. Download PDF or share via Telegram instantly.">
+    <meta property="twitter:image" content="https://www.proforma.et/og-image.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Proforma.et",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ETB"
+      },
+      "description": "A web-based invoice and quotation generator tailored for the Ethiopian market, featuring VAT calculations, TIN management, and PDF generation.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "500"
+      },
+      "featureList": "VAT Calculation, TIN Management, PDF Export, Client Management, Catalog System"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "u4go0wm9cv");
+    </script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Helvetica', 'Arial', 'sans-serif'],
+              display: ['Helvetica', 'Arial', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'scale-in': 'scaleIn 0.5s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              float: {
+                '0%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-15px)' },
+                '100%': { transform: 'translateY(0px)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Hide scrollbar for PWA aesthetic */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: contain; /* Prevent pull-to-refresh jump */
+      }
+      /* Prevent text selection on buttons for app feel */
+      button, a {
+        user-select: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
